@@ -1,18 +1,39 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <Toolbar class="toolbar"></Toolbar>
+
+              <Pesquisa></Pesquisa>          
+
+      
+    
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import Toolbar from "@/components/Toolbar.vue";
+import Footer from "@/components/Footer.vue";
+import Pesquisa from "@/components/Pesquisa.vue";
 
 export default {
   name: "home",
   components: {
-    HelloWorld
+    Toolbar,
+    Footer,
+    Pesquisa
   }
 };
 </script>
+
+<style scoped>
+.toolbar{
+}
+.home{
+  color: aqua;
+}
+.conteudo{
+  padding-left: 10%;
+  padding-right: 10%;
+}
+</style>
