@@ -9,7 +9,7 @@
         class="text-center"
         cols="12"
       >
-        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+        {{ new Date().getFullYear() }}/2 — <strong>LabRedes - API</strong>
       </v-col>
     </v-footer>
   </v-card>    

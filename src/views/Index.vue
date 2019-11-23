@@ -1,9 +1,9 @@
 <template>
     <div class="index">
-        <v-container fluid>
+        <v-container >
             <v-card
                 hover
-                color="white"
+                color="brown darken-1"
                 class="mx-auto"
                 max-width="90%"
                 outlined
@@ -34,7 +34,7 @@
                                                 
                                             ></v-text-field>
                                             <v-btn class="mr-4" flat text="" @click="submit"> Apagar </v-btn>
-                                            <v-btn class="mr-4" flat text="" to="/home" @click="submit"> Entrar </v-btn>
+                                            <v-btn class="mr-4" flat text="" to="/index" @click="submit"> Entrar </v-btn>
                                         </v-col>
                                     </v-row>
                                 </v-container>
@@ -48,7 +48,7 @@
                         tile
                     >
                         <v-img
-                            src="../assets/aviao.png"
+                            src="../assets/roloFilmeFundo.png"
                         ></v-img>
                     </v-avatar>
                 </div>
