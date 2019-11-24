@@ -57,7 +57,7 @@ export default {
     drawer: true,
     items: [
       { icon: 'mdi-house', title: 'Home', route: '/' },
-      { icon: 'mdi-view-dashboard', title: 'Dashboard', route: 'group' },
+      { icon: 'mdi-view-dashboard', title: 'Populares', route: '/populares' },
       { icon: 'fas fa-circle-notch fa-spin', title: 'Routines', route: '/algo'},
       { icon: 'fas fa-sliders-h', title: 'Settings', route: '/settings'},
       { icon: 'fas fa-project-diagram', title: 'Old Board', route: '/table'}
