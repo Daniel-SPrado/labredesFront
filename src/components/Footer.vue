@@ -1,6 +1,7 @@
 <template>
-  <v-card height="1px"> 
+  <v-card height="50px" class="footer"> 
     <v-footer
+      height="50px"
       fixed
       color="white"
       class="font-weight-medium"
@@ -22,5 +23,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

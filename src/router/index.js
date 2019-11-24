@@ -4,8 +4,9 @@ import LayoutSistema from '../layout/LayoutSistema.vue'
 import BoasVindas from "../components/Boasvindas.vue";
 import Populares from "../components/API/Populares.vue";
 import Login from "../views/Login.vue";
-
+import Generos from "../components/API/Generos.vue";
 Vue.use(Router)
+
 
 export default new Router({
     routes: [
@@ -23,6 +24,11 @@ export default new Router({
                     path: '/populares',
                     name: 'populares',
                     component: Populares,
+                },
+                {
+                    path: '/generos',
+                    name: 'generos',
+                    component: Generos
                 }
             ]
         },
