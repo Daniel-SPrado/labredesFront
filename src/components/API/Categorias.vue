@@ -1,5 +1,6 @@
 <template>
     <v-container>
+        <seletorCategoria></seletorCategoria>
         <v-hover v-for="votado in votados" :key="votado.id"  class="cartao">
             <template v-slot="{ hover }">
             <v-card
@@ -67,11 +68,13 @@
 <script>
 import axios from 'axios';
 import filme from '../API/Filme.vue';
+import seletorCategoria from './SeletorCategoria.vue'
 
 export default {
     name: "populares",
     components: {
-        filme
+        filme,
+        seletorCategoria
     },
     data(){
         return {
