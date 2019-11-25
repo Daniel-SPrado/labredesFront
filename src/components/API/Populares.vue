@@ -11,9 +11,28 @@
                 <v-list-item-content>
                     
                     <div class="overline mb-4">
-                        <v-avatar color="indigo" size="40px">
-                        <span class="white--text headline"> {{ votado.vote_average }}  </span>
-                        </v-avatar>
+
+                        <span v-if="votado.vote_average >= 8">
+                            <v-avatar color="green" size="40px">
+                                <span class="white--text headline"> {{ votado.vote_average }}  </span>
+                            </v-avatar>
+                        </span>
+                        <span v-if="votado.vote_average >= 6 && votado.vote_average < 8">
+                            <v-avatar color="indigo" size="40px">
+                                <span class="white--text headline"> {{ votado.vote_average }}  </span>
+                            </v-avatar>
+                        </span>
+                        <span v-if="votado.vote_average >= 4 && votado.vote_average < 6">
+                            <v-avatar color="yellow" size="40px">
+                                <span class="white--text headline"> {{ votado.vote_average }}  </span>
+                            </v-avatar>
+                        </span>
+                        <span v-if="votado.vote_average < 4">
+                            <v-avatar color="red" size="40px">
+                                <span class="white--text headline"> {{ votado.vote_average }}  </span>
+                            </v-avatar>
+                        </span>
+
                          {{ votado.original_language }} 
                     </div>
                     <v-list-item-title class="headline mb-1"> {{ votado.original_title }} ( {{ votado.title }} ) </v-list-item-title>
@@ -35,6 +54,13 @@
             </v-card>
             </template>
         </v-hover>
+        <div class="text-center">
+            <v-pagination
+            v-model="pagina"
+            :length="paginacao.total_pages"
+            @input="next"
+        ></v-pagination>
+  </div>
     </v-container>
 </template>
 
@@ -49,8 +75,10 @@ export default {
     },
     data(){
         return {
+            pagina: 1,
             votados: null,
-            film_id: null
+            film_id: null,
+            paginacao: null,
         }
     },
     mounted(){
@@ -59,7 +87,16 @@ export default {
     methods: {
         getRated(){
             axios
-            .get('https://api.themoviedb.org/3/movie/top_rated?api_key=41ddd1e8aded97e6f2d7b1c232632004&language=pt-br')
+            .get('https://api.themoviedb.org/3/movie/top_rated?api_key=41ddd1e8aded97e6f2d7b1c232632004&language=pt-br&page='+this.pagina)
+            .then(response => {
+                this.votados = response.data['results']
+                this.paginacao = response.data
+                this.pagina = response.data['page']
+            })
+        },
+        next(){
+            axios
+            .get('https://api.themoviedb.org/3/movie/top_rated?api_key=41ddd1e8aded97e6f2d7b1c232632004&language=pt-br&page='+this.pagina)
             .then(response => {
                 this.votados = response.data['results']
             })

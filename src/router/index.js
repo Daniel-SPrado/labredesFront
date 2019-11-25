@@ -5,6 +5,8 @@ import BoasVindas from "../components/Boasvindas.vue";
 import Populares from "../components/API/Populares.vue";
 import Login from "../views/Login.vue";
 import Generos from "../components/API/Generos.vue";
+import Categoria from "../views/Categoria.vue"
+
 Vue.use(Router)
 
 
@@ -29,6 +31,11 @@ export default new Router({
                     path: '/generos',
                     name: 'generos',
                     component: Generos
+                },
+                {
+                    path: '/categoria',
+                    name: 'categoria',
+                    component: Categoria
                 }
             ]
         },
