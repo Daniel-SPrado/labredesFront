@@ -75,6 +75,7 @@ export default {
     },
     data(){
         return {
+            categoria: "upcoming",
             pagina: 1,
             votados: null,
             film_id: null,
@@ -87,7 +88,7 @@ export default {
     methods: {
         getRated(){
             axios
-            .get('https://api.themoviedb.org/3/movie/top_rated?api_key=41ddd1e8aded97e6f2d7b1c232632004&language=pt-br&page='+this.pagina)
+            .get('https://api.themoviedb.org/3/movie/'+this.categoria+'?api_key=41ddd1e8aded97e6f2d7b1c232632004&language=pt-br&page='+this.pagina)
             .then(response => {
                 this.votados = response.data['results']
                 this.paginacao = response.data
