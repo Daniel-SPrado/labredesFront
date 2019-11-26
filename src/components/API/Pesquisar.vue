@@ -18,7 +18,7 @@
           cols="12"
           md="4"
         >
-          <v-btn outlined class="mr-4" text @click="validar"> Entrar </v-btn>
+          <v-btn class="mr-4" text @click="validar"> Entrar </v-btn>
         </v-col>
 
       </v-row>
