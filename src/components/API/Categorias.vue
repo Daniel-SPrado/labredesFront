@@ -1,6 +1,19 @@
 <template>
     <v-container>
-        <seletorCategoria></seletorCategoria>
+        <template>
+            <v-card class="mx-auto cartao" outlined >
+                <div class="overline mb-4">
+                    <!-- {{ this.categoria }} -->
+                </div>
+            </v-card>
+        </template>
+  <v-tabs>
+    <v-tab @click="selecionaCat('popular')">Popular</v-tab>
+    <v-tab @click="selecionaCat('upcoming')">Próximos</v-tab>
+    <v-tab @click="selecionaCat('top_rated')">Mais votados</v-tab>
+    <v-tab @click="selecionaCat('now_playing')">Nos cinemas</v-tab>
+  </v-tabs>
+
         <v-hover v-for="votado in votados" :key="votado.id"  class="cartao">
             <template v-slot="{ hover }">
             <v-card
@@ -50,7 +63,8 @@
                 </v-list-item>
 
                 <v-card-actions>
-                <filme v-bind:film_id="votado.id"></filme>
+                    <filme v-bind:film_id="votado.id"></filme>
+                    <review v-bind:filme_id="votado.id"></review>
                 </v-card-actions>
             </v-card>
             </template>
@@ -68,13 +82,16 @@
 <script>
 import axios from 'axios';
 import filme from '../API/Filme.vue';
-import seletorCategoria from './SeletorCategoria.vue'
+import review from '../API/Review.vue'
+// import seletorGenero from './SeletorGenero.vue'
+
 
 export default {
     name: "populares",
     components: {
         filme,
-        seletorCategoria
+        review
+        // seletorGenero
     },
     data(){
         return {
@@ -83,13 +100,19 @@ export default {
             votados: null,
             film_id: null,
             paginacao: null,
+            items: [
+                { title: 'popular', name: 'Popular' },
+                { title: 'upcoming', name: 'Próximos' },
+                { title: 'top_rated', name: 'Mais votados' },
+                { title: 'now_playing', name: 'Nos cinemas' },
+            ],
         }
     },
     mounted(){
         this.getRated();
     },
     methods: {
-        getRated(){
+        getRated( ){
             axios
             .get('https://api.themoviedb.org/3/movie/'+this.categoria+'?api_key=41ddd1e8aded97e6f2d7b1c232632004&language=pt-br&page='+this.pagina)
             .then(response => {
@@ -104,6 +127,14 @@ export default {
             .then(response => {
                 this.votados = response.data['results']
             })
+        },
+        selecionaCat( categoria ){
+             this.categoria = categoria
+             this.getRated();
+        },
+        review(){
+            axios
+            .get('/movie/{movie_id}/reviews')
         }
     }
 }

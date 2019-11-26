@@ -56,11 +56,11 @@ export default {
     return {
     drawer: true,
     items: [
-      { icon: 'mdi-house', title: 'Apresentação', route: '/boasvindas' },
+      { icon: 'fas fa-home', title: 'Apresentação', route: '/boasvindas' },
       { icon: 'mdi-view-dashboard', title: 'Categorias', route: '/categorias' },
       { icon: 'fas fa-circle-notch fa-spin', title: 'Generos', route: '/generos'},
-      { icon: 'fas fa-sliders-h', title: 'Settings', route: '/settings'},
-      { icon: 'fas fa-project-diagram', title: 'Old Board', route: '/table'}
+      { icon: 'mdi-view-dashboard', title: 'Pesquisar', route: '/pesquisar  ' }
+
     ],
         languages: [            
         { flag: 'us', language: 'en', title: 'English' },            

@@ -1,10 +1,11 @@
 import Vue from "vue";
 import Router from "vue-router";
-import LayoutSistema from '../layout/LayoutSistema.vue'
+import LayoutSistema from '../layout/LayoutSistema.vue';
 import BoasVindas from "../components/Boasvindas.vue";
 import Categorias from "../components/API/Categorias.vue";
 import Login from "../views/Login.vue";
 import Generos from "../components/API/Generos.vue";
+import Pesquisar from "../components/API/Pesquisar.vue"
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ export default new Router({
                     path: '/generos',
                     name: 'generos',
                     component: Generos
+                },
+                {
+                    path: '/pesquisar',
+                    name: 'pesquisar',
+                    component: Pesquisar    
                 }
             ]
         },

@@ -1,25 +1,6 @@
 <template>
-  <div class="text-center">
-    <v-menu offset-y>
-      <template v-slot:activator="{ on }">
-        <v-btn
-          color="primary"
-          dark
-          v-on="on"
-        >
-          Dropdown
-        </v-btn>
-      </template>
-      <v-list>
-        <v-list-item
-          v-for="(item, index) in items"
-          :key="index"
-          
-        >
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>
+  <div>
+
   </div>
 </template>
 
@@ -27,11 +8,19 @@
   export default {
     data: () => ({
       items: [
-        { title: 'Click Me' },
-        { title: 'Click Me' },
-        { title: 'Click Me' },
-        { title: 'Click Me 2' },
+        { title: 'popular', name: 'Popular' },
+        { title: 'upcoming', name: 'Próximos' },
+        { title: 'top_rated', name: 'Mais votados' },
+        { title: 'now_playing', name: 'Nos cinemas' },
       ],
+      generos: [],
     }),
+    mounted(){
+    },
+    methods: {
+        seleciona( selecionado ){
+            alert( selecionado )
+        }
+    }
   }
 </script>
