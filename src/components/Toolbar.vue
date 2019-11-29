@@ -56,10 +56,10 @@ export default {
     return {
     drawer: true,
     items: [
-      { icon: 'fas fa-home', title: 'Apresentação', route: '/boasvindas' },
+      { icon: 'mdi-anchor', title: 'Apresentação', route: '/boasvindas' },
       { icon: 'mdi-view-dashboard', title: 'Categorias', route: '/categorias' },
-      { icon: 'fas fa-circle-notch fa-spin', title: 'Generos', route: '/generos'},
-      { icon: 'mdi-view-dashboard', title: 'Pesquisar', route: '/pesquisar  ' }
+      { icon: 'mdi-mouse', title: 'Generos', route: '/generos'},
+      { icon: 'mdi-watch', title: 'Pesquisar', route: '/pesquisar' }
 
     ],
         languages: [            
