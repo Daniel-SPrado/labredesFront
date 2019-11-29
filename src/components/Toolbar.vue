@@ -17,10 +17,10 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="title">
-            API Filme
+            Moovie API
           </v-list-item-title>
           <v-list-item-subtitle>
-            Esta é uma API de filmes
+            The Moovie DB 2.0
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
