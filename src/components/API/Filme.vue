@@ -34,6 +34,8 @@
                         <span v-for="genero in filme.genres" :key="genero.id">
                             {{genero.name}} ,
                         </span>
+
+
                     </v-card-subtitle>
                     <v-card-text>
                     {{ filme.overview }}

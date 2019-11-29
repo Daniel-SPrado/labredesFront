@@ -7,7 +7,7 @@
         <span> API </span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn flat color="grey">
+      <v-btn flat color="grey" to="/login">
         <span> Sign Out </span>
         <v-icon right> fas fa-sign-out-alt </v-icon>
       </v-btn>
@@ -58,7 +58,6 @@ export default {
     items: [
       { icon: 'mdi-anchor', title: 'Apresentação', route: '/boasvindas' },
       { icon: 'mdi-view-dashboard', title: 'Categorias', route: '/categorias' },
-      { icon: 'mdi-mouse', title: 'Generos', route: '/generos'},
       { icon: 'mdi-watch', title: 'Pesquisar', route: '/pesquisar' }
 
     ],

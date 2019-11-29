@@ -1,10 +1,23 @@
 <template>
   <v-form v-model="valid">
+            <v-hover>
+            <template>
+                <v-card class="mx-auto cartao" outlined :elevation="hover ? 24 : 1">
+                    <div class="overline mb-4">
+                        <v-list-item three-line="">
+                        <v-list-item-content>
+                        <v-list-item-title class="headline mb-1"> Pesquisa Filme </v-list-item-title> 
+                        </v-list-item-content>
+                        </v-list-item>
+                    </div>
+                </v-card>
+            </template>
+        </v-hover>
     <v-container>
       <v-row>
         <v-col
           cols="12"
-          md="6"
+          md="10"
         >
           <v-text-field
             v-model="filme"
@@ -13,7 +26,10 @@
 
           </v-text-field>
         </v-col>
-        <v-col>
+        <v-col
+          cols="12"
+          md="2"
+        >
           <v-btn
           text
           @click="procuraFilme"
@@ -72,7 +88,7 @@
 
                 <v-card-actions>
                     <filme v-bind:film_id="votado.id"></filme>
-                    <review v-bind:filme_id="votado.id"></review>
+                    <review v-bind:film_id="votado.id"></review>
                 </v-card-actions>
             </v-card>
             </template>

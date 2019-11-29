@@ -11,11 +11,14 @@
       v-model="dialog"
       max-width="80%"
     >
-      <v-card>
+      <v-card
+      outlined
+      >
         <v-container fluid>
-            <v-row> 
-                {{ review }}
-            </v-row>
+             <v-row v-for="comentario in review" :key="comentario.id"> 
+                  <h2> {{ comentario.author }} </h2>
+                  <p> {{ comentario.content }} </p>
+              </v-row>
         </v-container>
       </v-card>
     </v-dialog>
@@ -23,7 +26,7 @@
 </template>
 
 <script>
-import Axios from 'axios';
+import axios from 'axios';
 
   export default {
     props: [ 'film_id' ],
@@ -41,10 +44,10 @@ import Axios from 'axios';
     },
     methods: {
         getReview(){
-            Axios
+            axios
             .get('https://api.themoviedb.org/3/movie/'+this.film_id+'/reviews?api_key=41ddd1e8aded97e6f2d7b1c232632004&language=pt-br')
-            .then(response =>{
-                this.review = response.data
+            .then(response => {
+                this.review = response.data['results']
             })
         }
     }

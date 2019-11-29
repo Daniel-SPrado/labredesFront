@@ -1,12 +1,18 @@
 <template>
     <v-container>
-        <template>
-            <v-card class="mx-auto cartao" outlined >
-                <div class="overline mb-4">
-                    <!-- {{ this.categoria }} -->
-                </div>
-            </v-card>
-        </template>
+        <v-hover>
+            <template>
+                <v-card class="mx-auto cartao" outlined :elevation="hover ? 24 : 1">
+                    <div class="overline mb-4">
+                        <v-list-item three-line="">
+                        <v-list-item-content>
+                        <v-list-item-title class="headline mb-1"> Categorias </v-list-item-title> 
+                        </v-list-item-content>
+                        </v-list-item>
+                    </div>
+                </v-card>
+            </template>
+        </v-hover>
   <v-tabs>
     <v-tab @click="selecionaCat('popular')">Popular</v-tab>
     <v-tab @click="selecionaCat('upcoming')">Próximos</v-tab>
@@ -46,7 +52,7 @@
                                 <span class="white--text headline"> {{ votado.vote_average }}  </span>
                             </v-avatar>
                         </span>
-
+                        
                          {{ votado.original_language }} 
                     </div>
                     <v-list-item-title class="headline mb-1"> {{ votado.original_title }} ( {{ votado.title }} ) </v-list-item-title>
@@ -64,7 +70,7 @@
 
                 <v-card-actions>
                     <filme v-bind:film_id="votado.id"></filme>
-                    <review v-bind:filme_id="votado.id"></review>
+                    <review v-bind:film_id="votado.id"></review>
                 </v-card-actions>
             </v-card>
             </template>

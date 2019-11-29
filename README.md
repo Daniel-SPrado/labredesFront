@@ -1,4 +1,6 @@
-# front
+Caso não deseja-se utilizar o projeto com 'npm', pode-se mover a pasta 'dist' para algum servidor WEB, tal como tomcat ou apache, e abrir a url com o destino do arquivo
+
+# Moovie API
 
 ## Project setup
 ```

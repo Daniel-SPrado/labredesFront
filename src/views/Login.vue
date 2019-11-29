@@ -1,62 +1,70 @@
 <template>
-    <div class="login">
-        <v-flex>
-
-        
-        <v-card
-            max-width="400"
-        >
-            <v-img
-            class="white--text align-end"
-            height="200px"
-            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+    <div class="index">
+        <v-container >
+            <v-card
+                hover
+                color="brown darken-1"
+                class="mx-auto"
+                max-width="90%"
+                outlined
             >
-            <v-card-title>Top 10 Australian beaches</v-card-title>
-            </v-img>
+                <div class="d-flex flex-no-wrap justify-space-between">
+                    <v-card-title class="formulario">
+                        <div>
+                            <v-form v-model="valid">
+                                <v-container>
+                                    <v-row>
+                                        <v-col cols="12">
+                                            <h1 id="titulo"> Conheça </h1>
+                                        </v-col>
+                                        <v-col cols="12">
+                        <v-img
+                        height="100px"
+                            src="../assets/roloFilmeFundo.png"
+                        ></v-img><br>
+                                            <v-btn class="mr-4" flat text="" to="/boasvindas" @click="submit"> Entrar </v-btn>
+                                        </v-col>
+                                    </v-row>
+                                </v-container>
+                            </v-form>
+                        </div>  
+                    </v-card-title>
+                    <v-avatar
+                        class="ma-3"
+                        width="30%"
+                        height="30%"
+                    >
 
-            <v-card-subtitle class="pb-0">Number 10</v-card-subtitle>
-
-            <v-card-text class="text--primary">
-            <div>Whitehaven Beach</div>
-
-            <div>Whitsunday Island, Whitsunday Islands</div>
-            </v-card-text>
-
-            <v-card-actions>
-            <v-btn
-                color="orange"
-                text
-            >
-                Share
-            </v-btn>
-
-            <v-btn
-                color="orange"
-                text
-            >
-                Explore
-            </v-btn>
-            </v-card-actions>
-        </v-card>
-
-        <v-btn :to="'/boasvindas'">
-            LOGAR
-        </v-btn>
-        </v-flex>
-    </div>
+                    </v-avatar>
+                </div>
+            </v-card>
+        </v-container>
+    </div>    
 </template>
 
 <script>
 export default {
-    name: 'Login'
+
 }
 </script>
 
-<style scoped>
-.login{
-    width: 100%;
+<style scoped>  
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap');
+.index{
+    
     height: 100%;
+    vertical-align: 50%;
     align-content: center;
+}
+.formulario{
+    background-color: rgb(255, 255, 255);
+    width: 50%;
     text-align: center;
+}
+#titulo{
+    margin-bottom: 5%;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: rgb(75, 75, 75);
+    align-content: center;
 }
 </style>
